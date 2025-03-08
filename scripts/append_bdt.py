@@ -11,7 +11,7 @@ couplings = np.logspace(-7,-2,21)
 
 modelname = "ALP-W"
 #path="/eos/project/f/faser-preshower/simulations/analysis/"+modelname+"/"
-path="/home/sabaterj/code/faser/photon-reco-py/scripts/discriminating_variables/output/signal/"
+path="/home/findjake/code/photon_identification_FASER/data/signal_test/pre-bdt/"
 for mass in masses:
     # integer_part, decimal_part = str(mass).split(".") # works for ALP-W
     integer_part, decimal_part = str(round(mass,3)).split(".")
@@ -30,10 +30,10 @@ for mass in masses:
 
         # Load the trained XGBoost model
         model = xgb.XGBClassifier()
-        model.load_model("model.json")
+        model.load_model("/home/findjake/code/photon_identification_FASER/model/model.json")
 
         # Create a new ROOT file and clone the original TTree
-        output_file = ROOT.TFile("output/"+file_name+"_bdt.root", "RECREATE")
+        output_file = ROOT.TFile("/home/findjake/code/photon_identification_FASER/data/signal_test/post-bdt/"+file_name+"_bdt.root", "RECREATE")
         new_tree = tree.CloneTree(0)  # Clone the tree structure, but not the content
 
         # Create a new branch for the prediction scores
@@ -43,7 +43,8 @@ for mass in masses:
 
         # Get the list of branches (variables) in the TTree
         #branches = [branch.GetName() for branch in tree.GetListOfBranches()]
-        branches = ["n_hits","qdmax","n_layers"]
+        #branches = ["n_hits","qdmax","n_layers"]
+        branches = ["tower_q_max","n_hits_5","q_max","q_2nd_max","q_frac_layer1_tot","n_hits_4","qmax_qtot"]
 
         # Loop over the entries, calculate the prediction scores, and fill the new tree
         for entry in range(tree.GetEntries()):
