@@ -1,0 +1,6 @@
+data/*
+!data/signal_training/
+!data/signal_training/signal.root
+!data/bkg/
+!data/bkg/genie_anumu.root
+!data/bkg/genie_anumu.root
