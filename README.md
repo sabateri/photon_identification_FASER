@@ -107,7 +107,7 @@ While the interpretation of the results requires some background in particle phy
    ```bash
    git clone https://github.com/sabateri/photon_identification_FASER.git
    cd photon_identification_FASER
-2. Run **[notebook/analysis.ipynb](notebook/analysis.ipynb)** to generate the XGBoost model file
+2. Run **[notebook/analysis.ipynb](notebook/analysis.ipynb)** to train the XGBoost model and save the model file
 3. Run **[scripts/append_bdt.py](scripts/append_bdt.py)** to append the BDT scores to the signals
 4. Run **[scripts/calc_yields_bdt.py](scripts/calc_yields_bdt.py)** to calculate the signal yields for each signal point
 
