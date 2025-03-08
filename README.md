@@ -68,7 +68,7 @@ Performance is evaluated using **log-loss** on training and validation sets, and
 ### **4.3 Appending XGBoost Scores**  
 Once the model is trained, the XGBoost score is appended to the original ROOT files using:  
 
-📌 **[scripts/append_bdt.py](scripts/append_bdt.p)** → Adds the XGBoost score to the ROOT file for further analysis.  
+📌 **[scripts/append_bdt.py](scripts/append_bdt.py)** → Adds the XGBoost score to the ROOT file for further analysis.  
 
 ---
 
@@ -105,5 +105,11 @@ While the interpretation of the results requires some background in particle phy
 ### 🚀 **Setup Instructions**  
 1. Clone the repository:  
    ```bash
-   git clone https://github.com/yourusername/ALP-vs-Background-ML.git
-   cd ALP-vs-Background-ML
+   git clone https://github.com/sabateri/photon_identification_FASER.git
+   cd photon_identification_FASER
+2. Run **[notebook/analysis.ipynb](notebook/analysis.ipynb)** to generate the XGBoost model file
+3. Run **[scripts/append_bdt.py](scripts/append_bdt.py)** to append the BDT scores to the signals
+4. Run **[scripts/calc_yields_bdt.py](scripts/calc_yields_bdt.py)** to calculate the signal yields for each signal point
+
+## **8. Todo**  
+Currently, only the training step is available, as these are the only files uploaded to the Git repository. The remaining steps require additional files, which need to be hosted in a publicly accessible location to enable anyone to run the complete workflow.
