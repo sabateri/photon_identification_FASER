@@ -5,7 +5,9 @@ In high-energy particle physics, the search for new particles beyond the Standar
 
 The FASER experiment at CERN is designed to detect new physics in the far-forward region of the Large Hadron Collider (LHC). However, the current FASER detector lacks the spatial resolution needed to resolve individual photons from ALP decays. To overcome this limitation, an upgraded preshower detector with high-granularity silicon sensors has been proposed. This enhancement aims to distinguish closely spaced photon pairs, enabling the identification of ALP decay events.
 
-Despite this upgrade, background events—primarily caused by neutrino interactions—can produce energy deposition patterns similar to two-photon signals. To address this challenge, this project explores the use of machine learning, specifically **XGBoost**, to classify events based on features extracted from energy depositions in the preshower detector. By training the model on simulated data, we aim to improve the discrimination between signal (ALP decays) and background (neutrino interactions), enhancing the discovery potential of the FASER experiment.
+Despite this upgrade, background events—primarily caused by neutrino interactions—can produce energy deposition patterns similar to two-photon signals. 
+
+To address this challenge, this project explores the use of machine learning, specifically **XGBoost**, to **classify events based on features extracted from energy depositions in the preshower detector**. By training the model on simulated data, we aim to improve the discrimination between signal (ALP decays) and background (neutrino interactions), enhancing the discovery potential of the FASER experiment.
 
 ---
 
@@ -111,5 +113,5 @@ While the interpretation of the results requires some background in particle phy
 3. Run **[scripts/append_bdt.py](scripts/append_bdt.py)** to append the BDT scores to the signals
 4. Run **[scripts/calc_yields_bdt.py](scripts/calc_yields_bdt.py)** to calculate the signal yields for each signal point
 
-## **8. Todo**  
+## **8. Todo / In progress**  
 Currently, only the training step is available, as these are the only files uploaded to the Git repository. The remaining steps require additional files, which need to be hosted in a publicly accessible location to enable anyone to run the complete workflow.
