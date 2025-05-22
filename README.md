@@ -50,7 +50,7 @@ The dataset consists of simulated energy depositions in the FASER preshower dete
 - Signal sample: `signal.root`  
 - Features are computed and labeled (`is_signal = 1` for signal, `0` for background).  
 
-📌 **See [notebook/analysis.ipynb](notebook/analysis.ipynb) for full implementation.**  
+**See [notebook/analysis.ipynb](notebook/analysis.ipynb) for full implementation.**  
 
 ---
 
@@ -63,27 +63,27 @@ A **XGBoost classifier** is used to distinguish between signal and background. T
 
 Performance is evaluated using **log-loss** on training and validation sets, and feature importance is analyzed using **SHAP values**.  
 
-📌 **See [notebook/analysis.ipynb](notebook/analysis.ipynb) for full details.**  
+**See [notebook/analysis.ipynb](notebook/analysis.ipynb) for full details.**  
 
 ---
 
 ### **4.3 Appending XGBoost Scores**  
 Once the model is trained, the XGBoost score is appended to the original ROOT files using:  
 
-📌 **[scripts/append_bdt.py](scripts/append_bdt.py)** → Adds the XGBoost score to the ROOT file for further analysis.  
+**[scripts/append_bdt.py](scripts/append_bdt.py)** → Adds the XGBoost score to the ROOT file for further analysis.  
 
 ---
 
 ### **4.4 Signal & Background Yields Calculation**  
 To determine the final expected number of signal and background events after applying an XGBoost score cut, the script:  
 
-📌 **[scripts/calc_yields_bdt.py](scripts/calc_yields_bdt.py)** → Applies the score cut and calculates the final event yields, saving the results in `ALP-W_cutyields.npy`.  
+**[scripts/calc_yields_bdt.py](scripts/calc_yields_bdt.py)** → Applies the score cut and calculates the final event yields, saving the results in `ALP-W_cutyields.npy`.  
 
 ### **4.5 Interpretation in Terms of FASER Reach**  
 The results are interpreted in the context of **FASER’s sensitivity to ALPs**. The significance of the signal is calculated for each point in the **signal parameter grid**, following the method recommended in [arXiv:2009.07249](https://arxiv.org/abs/2009.07249).  
 
 The significance calculation is performed using the tools provided in:  
-📌 **[FORESEE-Preshower](https://gitlab.cern.ch/jsabater/foresee-preshower)**  
+**[FORESEE-Preshower](https://gitlab.cern.ch/jsabater/foresee-preshower)**  
 
 ---
 
@@ -91,7 +91,7 @@ The significance calculation is performed using the tools provided in:
 An **exclusion plot** is generated based on the calculated significances, setting constraints on ALP production in FASER.  
 
 The exclusion limits are obtained using:  
-📌 **[FORESEE-Preshower](https://gitlab.cern.ch/jsabater/foresee-preshower)**  
+**[FORESEE-Preshower](https://gitlab.cern.ch/jsabater/foresee-preshower)**  
 #### **FASER Reach Exclusion Plot**  
 ![FASER Reach](images/FASER_reach.png)
 ---
@@ -104,7 +104,7 @@ While the interpretation of the results requires some background in particle phy
 ---
 
 ## **7. How to Run the Project**  
-### 🚀 **Setup Instructions**  
+### **Setup Instructions**  
 1. Clone the repository:  
    ```bash
    git clone https://github.com/sabateri/photon_identification_FASER.git
